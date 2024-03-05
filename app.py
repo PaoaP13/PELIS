@@ -28,14 +28,14 @@ movies_dict = pickle.load(open('movie_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
 
-st.title('Movie Recommender System')
+st.title('SISTEMA DE RECOMENDACIÓN DE PELÍCULAS')
 
 selected_movie_name = st.selectbox(
-    'How would you like to be contacted?',
+    '¿Cuál es la película favorita? :)',
     movies['title'].values
 )
 
-if st.button('Recommend'):
+if st.button('Recomendar'):
     names, posters = recommend(selected_movie_name)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
